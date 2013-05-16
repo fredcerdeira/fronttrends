@@ -6,7 +6,8 @@
 		"slides": "http://speackerdeck.com",
 		"video": "",
 		"year": "2013",
-		"tags": ["css", "layout", "grid"]
+		"tags": ["css", "layout", "grid"],
+		"color": "#ff0000"
 	},
 	{
 		"title": "Know your errors",
@@ -14,7 +15,8 @@
 		"twitter": "@dicode",
 		"slides": "http://speackerdeck.com",
 		"year": "2012",
-		"tags": ["performance", "tools"]
+		"tags": ["performance", "tools"],
+		"color": "#ff0000"
 	},
 	{
 		"title": "Rendering without lumpy bits",
@@ -22,7 +24,8 @@
 		"twitter": "@jaffathecake",
 		"slides": "http://speackerdeck.com",
 		"year": "2013",
-		"tags": ["render"]
+		"tags": ["render"],
+		"color": "#00ff00"
 	},
 	{
 		"title": "Rendering without lumpy bits",
@@ -30,6 +33,7 @@
 		"twitter": "@jaffathecake",
 		"slides": "http://speackerdeck.com",
 		"year": "2013",
-		"tags": ["css", "layout", "grid"]
+		"tags": ["css", "layout", "grid"],
+		"color": "#0000ff"
 	}
 ]

@@ -10,11 +10,14 @@
 	});
 
 	var SearchModel = Backbone.Model.extend({
-		defaults: { query: '', year: '2013' },
+		defaults: { query: '', year: '2013', loaded: false },
 
 		initialize: function(options) {
+			var self = this;
 			this.posts = new PostsModel;
-			this.posts.fetch();
+			this.posts.fetch({ success: function(model, result) {
+				self.set('loaded', true);
+			} });
 		},
 
 		getPosts: function() {
@@ -49,8 +52,10 @@
 
 		changeYear: function(e) {
 			e.preventDefault();
+
 			var target = e.currentTarget;
 			this.model.set('year', $(target).text());
+
 			$('.years li').removeClass('active');
 			$(target).parent().addClass("active");
 		},
@@ -70,38 +75,28 @@
 		},
 
 		update: function() {
-			var posts = this.model.getPosts();
+			var posts = this.model.getPosts(), view = this;
 
-			
-			var output = "";
+			this.fetchTemplate('js/templates/results.html', function(tmpl){
+				view.$el.html(tmpl({ posts: posts }));
+			});	
+		},
 
-			for (var i = 0; i < posts.length; i++) {
-				output+="<section class='col'><ul>";
+		fetchTemplate: function (path, done) {
 
-				for (var j in posts[i]) {
+		    window.JST = window.JST || {};
 
-	    			if (posts[i][j]) { output+="<li>" + posts[i][j]+ "</li>"; }
-	    				 		
-				}
+		    if (JST[path]) {
+		        return done(JST[path]);
+		    }
 
-				output+="</ul></section>";
-			};
+		    return jQuery.get(path, function (contents) {
+		        var tmpl = _.template(contents);
 
-		
+		        JST[path] = tmpl;
 
-			$('.sessions').html(output);
-			/*
-			var self = this; 
-			var tpl = $.ajax({
-			  			url: 'js/templates/results.html'
-					  }).done(function() {
-					  	//console.log(tpl.responseText)
-  						 self.$el.html(_.template(tpl.responseText, posts));
-					  });
-
-					  */
-		
-			
+		        done(tmpl);
+		    });
 		}
 	});
 
@@ -110,7 +105,6 @@
 
 		initialize: function(options) {
 			this.model = new SearchModel;
-			this.posts = new PostsModel;
 			this.results = new ResultsView( { model: this.model } );
 			this.search = new SearchView( { model: this.model } );
 		}
