@@ -1,0 +1,52 @@
+[
+	{
+		"title": "The New CSS Layout",
+		"speaker": "RACHEL ANDREW",
+		"twitter": "rachelandrew",
+		"slides": "https://speakerdeck.com/rachelandrew/front-trends-2013-the-new-css-layout",
+		"video": "",
+		"year": "2013",
+		"tags": ["css", "layout", "grid"]
+	},
+	{
+		"title": "Know your errors",
+		"speaker": "DIOGO ANTUNES",
+		"twitter": "dicode",
+		"slides": "http://www.slideshare.net/dicode/know-your-errors",
+		"year": "2013",
+		"tags": ["performance", "tools"]
+	},
+	{
+		"title": "The humble border-radius",
+		"speaker": "Lea Verou",
+		"twitter": "leaverou",
+		"slides": "http://lea.verou.me/humble-border-radius/#for-browser",
+		"year": "2013",
+		"tags": ["css, browser"]
+	},
+	{
+		"title": "Debug Your Language with Source Maps",
+		"speaker": "NICK FITZGERALD",
+		"twitter": "fitzgen",
+		"slides": "https://googledrive.com/host/0B1NZEPSm3Bh3TU1sekctczdQSjg/#/",
+		"year": "2013",
+		"tags": ["debugging", "source maps", "compiler"]
+	},
+	{
+		"title": "When to Node?",
+		"speaker": "John Schulz",
+		"twitter": "fitzgen",
+		"slides": "http://jsno.de/presentations/Front-Trends/#/",
+		"video": "http://vimeo.com/45992488",
+		"year": "2012",
+		"tags": ["node", "node.js", "javascript"]
+	},
+	{
+		"title": "Learning to Teach",
+		"speaker": "Bartek Szopka",
+		"twitter": "fitzgen",
+		"slides": "https://speakerdeck.com/bartoszopka/learning-to-teach",
+		"year": "2012",
+		"tags": ["learn", "source", "teach", "learning"]
+	}
+]
