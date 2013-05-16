@@ -22,7 +22,7 @@
 		"twitter": "leaverou",
 		"slides": "http://lea.verou.me/humble-border-radius/#for-browser",
 		"year": "2013",
-		"tags": ["css", "browser"]
+		"tags": ["css", "browser", "lea"]
 	},
 	{
 		"title": "Debug Your Language with Source Maps",
@@ -30,7 +30,7 @@
 		"twitter": "fitzgen",
 		"slides": "https://googledrive.com/host/0B1NZEPSm3Bh3TU1sekctczdQSjg/#/",
 		"year": "2013",
-		"tags": ["debugging", "source maps", "compiler"]
+		"tags": ["debugging", "source maps", "compiler", "debug"]
 	},
 	{
 		"title": "When to Node?",
