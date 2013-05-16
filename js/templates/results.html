@@ -1,13 +1,14 @@
 <% _.each(posts, function(post) { %> 
 	<section class='col'>
-		<h1 style="background: <%= post.color %>;"><%= post.title %></h1>
-		<h2><%= post.speaker %></h2>
+		<h2><%= post.title %></h2>
+		<p><%= post.speaker %></p>
 		<% if(post.video) { %>
-			<div class="video">
-				<%= post.video %>
-			</div>
+			<p class="video">
+				<a href="<%= post.video %>" target="_blank"><%= post.video %></a>
+			</p>
 		<% } %>
-		<a href="<%= post.slides %>"><%= post.slides %></a>
+		<p><a href="<%= post.slides %>" target="_blank"><%= post.slides %></a></p>
+		<p>@<a href="http://twitter.com/<%= post.twitter %>" target="_blank"><%= post.twitter %></a></p>
 	</section>
 <% }); %>
 	

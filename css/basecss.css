@@ -230,7 +230,9 @@ body {
 .col {
   width: 248px;
   margin: 10px;
-  height: 300px;
+  height: 230px;
+  overflow: hidden;
+  word-break: break-all;
 }
 
 
@@ -325,7 +327,6 @@ ul {
 }
 
 
-
 .sessions {
   padding: 10px 0;
   text-align: center;
@@ -333,6 +334,16 @@ ul {
 
 .sessions .col {
   text-align: left;
+  font-size: 1.2em;
+}
+
+.sessions .col a {
+  color: #EB212E;
+  text-decoration: none;
+}
+
+.sessions .col a:hover {
+  color: #ccc;
 }
 
 
