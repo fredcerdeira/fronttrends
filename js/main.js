@@ -6,7 +6,7 @@
 
 	var PostsModel = Backbone.Collection.extend({
 		model: PostModel,
-		url: 'js/models/db.json'
+		url: 'js/models/db.json'	
 	});
 
 	var SearchModel = Backbone.Model.extend({
@@ -18,18 +18,28 @@
 		},
 
 		getPosts: function() {
-			var result = this.posts.where({ year: this.get('year') });
+			var models = this.posts.where({ year: this.get('year') }),
+				result = [];
+				model = this;
 
 			if(this.get('query') != '') {
-
+				models = _.filter(models, function(post) { 
+					for(var i = 0, len = post.get('tags').length; i < len; i++) {
+						if(post.get('tags')[i] == model.get('query')) return true;
+					}
+					return false;
+				});
 			}
-			//if(this.posts not empty)
-			//query this.posts using query and year
-			return result.toJSON();
+
+			for(var i = 0, len = models.length; i < len; i++) {
+				result.push(models[i].toJSON());
+			}
+
+			return result;
 		}
 	});
 
-	var SearchView = Backbone.Model.extend({
+	var SearchView = Backbone.View.extend({
 		el: '.main-header',
 
 		events: {
@@ -41,6 +51,8 @@
 			e.preventDefault();
 			var target = e.currentTarget;
 			this.model.set('year', $(target).text());
+			$('.years li').removeClass('active');
+			$(target).parent().addClass("active");
 		},
 
 		changeQuery: function(e) {
@@ -48,16 +60,19 @@
 		}
 	});
 
-	var ResultsView = Backbone.Model.extend({
+	var ResultsView = Backbone.View.extend({
 		el: '.sessions',
 
 		initialize: function() {
+			_.bindAll(this, 'update');
+
 			this.model.on('change', this.update);
 		},
 
 		update: function() {
 			var posts = this.model.getPosts();
 
+			
 			var output = "";
 
 			for (var i = 0; i < posts.length; i++) {
@@ -71,10 +86,22 @@
 
 				output+="</ul></section>";
 			};
-			
+
+		
 
 			$('.sessions').html(output);
-			//this.$el.html(_.template(postsTemplate, posts));
+			/*
+			var self = this; 
+			var tpl = $.ajax({
+			  			url: 'js/templates/results.html'
+					  }).done(function() {
+					  	//console.log(tpl.responseText)
+  						 self.$el.html(_.template(tpl.responseText, posts));
+					  });
+
+					  */
+		
+			
 		}
 	});
 
@@ -90,31 +117,7 @@
 	});
 
 	$(document).ready (function() {
-		
-		var main = new MainView();
-		
-		/*
-		$.getJSON('js/models/db.json', function(data) {
-			console.log(data);
-
-			var output = "";
-
-			for (var i = 0; i < data.length; i++) {
-				output+="<section class='col'><ul>";
-
-				for (var j in data[i]) {
-
-	    			if (data[i][j]) { output+="<li>" + data[i][j]+ "</li>"; }
-	    				 		
-				}
-
-				output+="</ul></section>";
-			};
-			
-
-			$('.sessions').html(output);
-
-		});*/
+		var main = new MainView;
 	});
 
 })();

@@ -4,6 +4,7 @@
 		"speaker": "RACHEL ANDREW",
 		"twitter": "@rachelandrew",
 		"slides": "http://speackerdeck.com",
+		"video": "",
 		"year": "2013",
 		"tags": ["css", "layout", "grid"]
 	},
@@ -11,18 +12,24 @@
 		"title": "Know your errors",
 		"speaker": "DIOGO ANTUNES",
 		"twitter": "@dicode",
-		"url": "http://speackerdeck.com"
+		"slides": "http://speackerdeck.com",
+		"year": "2012",
+		"tags": ["performance", "tools"]
 	},
 	{
 		"title": "Rendering without lumpy bits",
 		"speaker": "JAKE ARCHIBALD",
 		"twitter": "@jaffathecake",
-		"url": "http://speackerdeck.com"
+		"slides": "http://speackerdeck.com",
+		"year": "2013",
+		"tags": ["render"]
 	},
 	{
 		"title": "Rendering without lumpy bits",
 		"speaker": "JAKE ARCHIBALD",
 		"twitter": "@jaffathecake",
-		"url": "http://speackerdeck.com"
+		"slides": "http://speackerdeck.com",
+		"year": "2013",
+		"tags": ["css", "layout", "grid"]
 	}
 ]

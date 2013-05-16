@@ -265,9 +265,6 @@ ul {
   padding: 0;
   font-size: 1.3em;
   border-bottom: 3px solid #EB212E;
-}
-
-.main-header nav li {
   margin: 0 10px 0 0;
   padding: 0 5px;
 }
@@ -283,8 +280,13 @@ ul {
 
 .main-header nav li a {
   color: #737373;
+  height: 38px;
+  display: inline-block;
 }
 
+.main-header nav li.active {
+  border-color: #cfff0e;
+}
 
 .main-header nav ul {
   float: left;

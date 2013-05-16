@@ -1,0 +1,10 @@
+<% for (var i = 0; i < posts.length; i++) { %>
+	<section class='col'>
+		<ul>
+			<% for (var j in posts[i]) { 
+				if (posts[i][j]) { %>
+				<li><%= posts[i][j] %></li>
+			<% } %>
+		</ul>
+	</section>
+ <% } %>
