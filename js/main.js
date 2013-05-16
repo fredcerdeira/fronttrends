@@ -1,5 +1,6 @@
 (function(){
 
+
 	var PostModel = Backbone.Model.extend({
 
 	});
