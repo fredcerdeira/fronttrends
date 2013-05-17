@@ -80,6 +80,11 @@
 
 			this.fetchTemplate('js/templates/results.html', function(tmpl){
 				view.$el.html(tmpl({ posts: posts }));
+
+				$('iframe').load(function() {
+					view.loadingVideo();
+				});
+
 			});	
 		},
 
@@ -98,7 +103,13 @@
 
 		        done(tmpl);
 		    });
+		},
+
+		loadingVideo: function() {
+			$('.loading').hide();
+			$('.video').show();
 		}
+
 	});
 
 	var MainView = Backbone.Model.extend({

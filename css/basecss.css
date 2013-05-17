@@ -130,6 +130,14 @@ input, textarea {
 }
 
 
+/* loading */
+.loading {
+  margin: 10% auto;
+  text-align: center;
+  width: 100%;
+}
+
+
 
 /* 3__HELPERS_________________________________*/
 
@@ -228,9 +236,9 @@ body {
 }
 
 .col {
-  width: 248px;
+  width: 400px;
   margin: 10px;
-  height: 230px;
+  height: 430px;
   overflow: hidden;
   word-break: break-all;
 }
@@ -346,6 +354,10 @@ ul {
 
 .sessions .col a:hover {
   color: #ccc;
+}
+
+.sessions .video {
+  display: none;
 }
 
 
