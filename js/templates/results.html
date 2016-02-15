@@ -1,0 +1,17 @@
+<% _.each(posts, function(post) { %> 
+	<section class='col'>
+		<h2><%= post.title %></h2>
+		<p><%= post.speaker %></p>
+		<p class="loading"><img src="img/loader.gif" alt="loading"></p>
+		<div class="video">
+			<% if(post.video) { %>
+				<iframe src="http://player.vimeo.com/video/<%= post.video %>" width="100%" height="224" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+			<% } else { %>
+				<p>Video not available yet.</p>
+			<% } %>
+		</div>
+		<p><a href="<%= post.slides %>" target="_blank"><%= post.slides %></a></p>
+		<p>@<a href="http://twitter.com/<%= post.twitter %>" target="_blank"><%= post.twitter %></a></p>
+	</section>
+<% }); %>
+	
