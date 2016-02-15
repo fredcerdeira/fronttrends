@@ -2,38 +2,44 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> disabled for validation-->
-        <title>Front-Trends Conferece coverage</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Hora do Esquilo</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/basecss.css">
-
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <div class="main">
-
+        <main>
             <header class="main-header">
-                <h1>Front-Trends Conference</h1>
-                <p>Sessions Stuff</p>
-                <nav class="clearfix">
-                    <ul class="years clearfix">
-                        <li><a href="#">2013</a></li>
-                        <li><a href="#">2012</a></li>
-                    </ul>
-                    <input type="search" class="search" placeholder="filter by topic">
-                </nav>
-            </header>          
-            <div class="sessions grid clearfix">
+                <h1>Hora do Esquilo</h1>
+            </header>
 
-            </div>
+            <input type="search" id="jetsSearch" placeholder="escreve a sigla. ex. RNS">
 
-        </div>
+            <div class="results">
+              <ul id="jetsContent">
+                <li>
+                  <blockquote>RNS - Rolador Non Stop</blockquote>
+                </li>
+                <li>Trepador - Muitas subidas, muitas descidas</li>
+                <li>PES - Prisão, Escadas</li>
+              </ul>
+            </div
 
-        <script src="js/libs/jquery-1.9.1.min.js"></script>
-        <script src="js/libs/underscore-1.4.4.min.js"></script>
-        <script src="js/libs/backbone-1.0.0.min.js"></script>
-        <script src="js/main.js"></script>
-        
+
+        </main>
+
+        <script src="js/libs/jets.min.js"></script>
+        <script>
+        (function(){
+
+          var jets = new Jets({
+            searchTag: '#jetsSearch',
+            contentTag: '#jetsContent'
+          });
+
+        })();
+        </script>
     </body>
 </html>
